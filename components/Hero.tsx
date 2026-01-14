@@ -46,7 +46,7 @@ export default function Hero() {
           className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-10"
         >
           Substrace Labs builds high-performance infrastructure for ambitious brands.
-          We don't just design websites; we engineer revenue systems.
+          We don&apos;t just design websites; we engineer revenue systems.
         </motion.p>
 
         {/* The Buttons */}
