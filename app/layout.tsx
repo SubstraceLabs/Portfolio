@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Syne } from "next/font/google";
+import { ReactLenis } from "lenis/react";
 import FluidNavbar from "@/components/FluidNavbar";
 import CustomCursor from "@/components/CustomCursor";
+import Preloader from "@/components/Preloader";
+import SheryLoader from "@/components/SheryLoader";
 import "./globals.css";
 
 // Load Syne font (wide, heavy typography)
@@ -23,13 +25,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${syne.variable} bg-[#F3F3F3] text-[#111] antialiased selection:bg-[#111] selection:text-[#F3F3F3] cursor-none`}>
-        <Script src="https://cdn.jsdelivr.net/npm/sheryjs@1.0.0-alpha.9/dist/shery.min.js" strategy="lazyOnload" />
-        <CustomCursor />
-        <FluidNavbar />
-        {children}
-      </body>
+    <html lang="en">
+      <ReactLenis root>
+        <body className={`${syne.variable} bg-[#F3F3F3] text-[#111] antialiased selection:bg-[#111] selection:text-[#F3F3F3]`}>
+          
+          {/* 1. Animation Engine (Shery.js) */}
+          <SheryLoader />
+
+          {/* 2. Global UI Elements */}
+          <Preloader />
+          <CustomCursor />
+          <FluidNavbar />
+          
+          {/* 3. Page Content */}
+          {children}
+          
+        </body>
+      </ReactLenis>
     </html>
   );
 }

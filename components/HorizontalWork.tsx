@@ -51,10 +51,12 @@ export default function HorizontalWork() {
              loop 
              muted 
              playsInline
-             className="absolute inset-0 w-full h-full object-cover opacity-40 transition-opacity duration-500 group-hover:opacity-80"
+             className="absolute inset-0 w-full h-full object-cover opacity-90 transition-opacity duration-500"
            />
+           {/* Black gradient overlay at bottom for text readability */}
+           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none" />
            <div className="relative z-10 pointer-events-none">
-             <h3 className="font-[family-name:var(--font-syne)] text-[8vw] font-bold uppercase leading-none">Apex</h3>
+             <h3 className="font-[family-name:var(--font-syne)] text-[clamp(40px,8vw,120px)] font-bold uppercase leading-none">Apex</h3>
              <p className="text-xl mt-4 font-mono">Roofing Systems</p>
            </div>
         </div>
@@ -67,10 +69,12 @@ export default function HorizontalWork() {
              loop 
              muted 
              playsInline
-             className="absolute inset-0 w-full h-full object-cover opacity-40 transition-opacity duration-500 group-hover:opacity-80"
+             className="absolute inset-0 w-full h-full object-cover opacity-90 transition-opacity duration-500"
            />
+           {/* Black gradient overlay at bottom for text readability */}
+           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none" />
            <div className="relative z-10 pointer-events-none">
-             <h3 className="font-[family-name:var(--font-syne)] text-[8vw] font-bold uppercase leading-none">Flow</h3>
+             <h3 className="font-[family-name:var(--font-syne)] text-[clamp(40px,8vw,120px)] font-bold uppercase leading-none">Flow</h3>
              <p className="text-xl mt-4 font-mono">SaaS CRM Dashboard</p>
            </div>
         </div>
@@ -83,10 +87,12 @@ export default function HorizontalWork() {
              loop 
              muted 
              playsInline
-             className="absolute inset-0 w-full h-full object-cover opacity-40 transition-opacity duration-500 group-hover:opacity-80"
+             className="absolute inset-0 w-full h-full object-cover opacity-90 transition-opacity duration-500"
            />
+           {/* Black gradient overlay at bottom for text readability */}
+           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none" />
            <div className="relative z-10 pointer-events-none">
-             <h3 className="font-[family-name:var(--font-syne)] text-[8vw] font-bold uppercase leading-none">Lumina</h3>
+             <h3 className="font-[family-name:var(--font-syne)] text-[clamp(40px,8vw,120px)] font-bold uppercase leading-none">Lumina</h3>
              <p className="text-xl mt-4 font-mono">Dental Studio</p>
            </div>
         </div>
@@ -99,10 +105,12 @@ export default function HorizontalWork() {
              loop 
              muted 
              playsInline
-             className="absolute inset-0 w-full h-full object-cover opacity-40 transition-opacity duration-500 group-hover:opacity-80"
+             className="absolute inset-0 w-full h-full object-cover opacity-90 transition-opacity duration-500"
            />
+           {/* Black gradient overlay at bottom for text readability */}
+           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none" />
            <div className="relative z-10 pointer-events-none">
-             <h3 className="font-[family-name:var(--font-syne)] text-[8vw] font-bold uppercase leading-none">Next.js</h3>
+             <h3 className="font-[family-name:var(--font-syne)] text-[clamp(40px,8vw,120px)] font-bold uppercase leading-none">Next.js</h3>
              <p className="text-xl mt-4 font-mono">Architecture</p>
            </div>
         </div>

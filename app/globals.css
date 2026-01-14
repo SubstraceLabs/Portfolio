@@ -20,13 +20,12 @@ body {
   overflow-x: hidden;
 }
 
-/* Smooth scroll behavior */
-html {
-  scroll-behavior: smooth;
-}
+/* Smooth scroll is handled by Lenis in layout.tsx */
 
-/* Hide default cursor */
-body * {
-  cursor: none !important;
+/* Hide default cursor - only on devices with a mouse (width > 768px) */
+@media (min-width: 768px) {
+  body * {
+    cursor: none !important;
+  }
 }
 

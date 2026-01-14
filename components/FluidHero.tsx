@@ -21,11 +21,9 @@ export default function FluidHero() {
   const textRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Wait for Shery to load from the script tag in layout.tsx
-    const interval = setInterval(() => {
+    // Initialize Shery animations when script loads
+    const initShery = () => {
       if (window.Shery) {
-        clearInterval(interval);
-        
         // 1. The "Liquid" Text Effect
         window.Shery.textAnimate(".fluid-text", {
           style: 1,
@@ -42,7 +40,17 @@ export default function FluidHero() {
           duration: 1,
         });
       }
-    }, 100);
+    };
+
+    // Check if already loaded, otherwise wait for event
+    if (window.Shery) {
+      initShery();
+    } else {
+      window.addEventListener('sheryLoaded', initShery);
+      return () => {
+        window.removeEventListener('sheryLoaded', initShery);
+      };
+    }
 
     // Hero video scroll animation - grows from text on scroll (appears earlier)
     if (heroRef.current && videoRef.current && textRef.current) {
@@ -92,10 +100,10 @@ export default function FluidHero() {
 
       {/* Text overlay with liquid animation */}
       <div ref={textRef} className="z-10 text-center mix-blend-difference text-white">
-        <h1 className="fluid-text font-[family-name:var(--font-syne)] text-[12vw] leading-[0.8] font-bold uppercase tracking-tighter">
+        <h1 className="fluid-text font-[family-name:var(--font-syne)] text-[clamp(60px,12vw,180px)] leading-[0.8] font-bold uppercase tracking-tighter">
           We Engineer
         </h1>
-        <h1 className="fluid-text font-[family-name:var(--font-syne)] text-[12vw] leading-[0.8] font-bold uppercase tracking-tighter ml-24 italic text-transparent stroke-black stroke-2" style={{ WebkitTextStroke: "2px #111" }}>
+        <h1 className="fluid-text font-[family-name:var(--font-syne)] text-[clamp(60px,12vw,180px)] leading-[0.8] font-bold uppercase tracking-tighter ml-24 italic text-transparent stroke-black stroke-2" style={{ WebkitTextStroke: "2px #111" }}>
           Feelings
         </h1>
       </div>

@@ -1,5 +1,7 @@
 import FluidHero from "@/components/FluidHero";
 import HorizontalWork from "@/components/HorizontalWork";
+import Capabilities from "@/components/Capabilities";
+import Process from "@/components/Process";
 import FooterTicker from "@/components/FooterTicker";
 
 export default function Home() {
@@ -9,6 +11,8 @@ export default function Home() {
       <div id="work">
         <HorizontalWork />
       </div>
+      <Capabilities />
+      <Process />
       <FooterTicker />
     </main>
   );
